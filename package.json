@@ -21,7 +21,12 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-undef": [ 1 ],
+      "semi": ["error", "always"],
+      "quotes": [ "error", "double"]
+    }
   },
   "browserslist": {
     "production": [
