@@ -1,8 +1,11 @@
 .App {
   text-align: center;
   background-color: #121212;
-  color: black;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  width: 100vw;
 }
 
 .App-logo {
@@ -10,4 +13,10 @@
   padding: 20px 0;
   width: 144px;
   cursor: pointer;
+}
+
+.App-main {
+  width: 100%;
+  /* max-width: 1200px; */
+  margin: 0 auto;
 }

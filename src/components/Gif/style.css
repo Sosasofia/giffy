@@ -1,0 +1,41 @@
+.Gif {
+  margin-bottom: .5em;
+  position: relative;
+  margin-bottom: 0;
+  border: 1px solid white;
+}
+  
+.Gif-link {
+  color: #000;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  width: 100%;
+  border: 1px solid white;
+  display: flex;
+  margin: 0 auto;
+}
+  
+.Gif h2 {
+  position: absolute;
+  background: rgba(0, 0, 0, .3);
+  bottom: 0;
+  font-size: 12px;
+  color: #fff;
+  margin: 0;
+}
+  
+.Gif img {
+  width: 100%;
+  object-fit: contain;
+  vertical-align: top;
+}
+  
+.Gif, .Gif-link {
+  height: 100%;
+}
+
+.Gif-link img {
+  height: inherit;
+  object-fit: cover;
+}
