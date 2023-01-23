@@ -21,6 +21,13 @@
   gap: 20px;
 }
 
+.App-detail {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
 @media screen and (max-width: 37.5rem) {
   .App-main {
     display: flex;

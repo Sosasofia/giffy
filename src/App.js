@@ -3,6 +3,7 @@ import "./App.css";
 import { GifsContextProvider } from "./context/GifsContexts";
 import StaticContext from "./context/StaticContext";
 import Home from "./pages/Home";
+import Detail from "./pages/Detail";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
 
         <GifsContextProvider>
           <Route component={Home} path="/" /> 
+          <Route component={Detail} path="/gif/:id" />
+          <Route component={() => <h1>404 ERROR :(</h1>} path="/404" />
         </GifsContextProvider>
       </div>
     </StaticContext.Provider>
