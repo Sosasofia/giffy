@@ -1,20 +1,20 @@
-import { useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import getGifs from "../services/getGifs";
+import GifsContext from "../context/GifsContexts";
 
 
 export default function useGifs() {
   const [loading, setLoading] = useState(false);
-  const [gifs, setGifs] = useState([]);
+  const { gifs, setGifs } = useContext(GifsContext);
 
   useEffect(() => {
     setLoading(true);
     getGifs()
-      .then( gifs =>{
+      .then(gifs => {
         setGifs(gifs);
         setLoading(false);
-      })
-      .catch(console.error);
-  }, []);
+      });
+  }, [setGifs]);
 
   return { loading, gifs };
 }
