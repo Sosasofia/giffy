@@ -27,6 +27,17 @@
   margin: 0 auto;
 }
 
+.Search-form {
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+.Search-select {
+  max-width: 180px;
+  margin-right: 10px;
+}
 
 @media screen and (max-width: 37.5rem) {
   .App-main {

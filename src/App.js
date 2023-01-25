@@ -4,6 +4,7 @@ import { GifsContextProvider } from "./context/GifsContexts";
 import StaticContext from "./context/StaticContext";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
+import SearchResults from "./pages/SearchResults";
 
 function App() {
   return (
@@ -18,8 +19,9 @@ function App() {
 
         <GifsContextProvider>
           <Route component={Home} path="/" /> 
+          <Route component={SearchResults} path="/search/:keyword/:rating?" />
           <Route component={Detail} path="/gif/:id" />
-          <Route component={() => <h1>404 ERROR :(</h1>} path="/404" />
+          <Route component={() => <h1 className="nes-text is-error">404 ERROR :(</h1>} path="/404" />
         </GifsContextProvider>
       </div>
     </StaticContext.Provider>
