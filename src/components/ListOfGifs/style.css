@@ -9,7 +9,6 @@
   min-height: 100vh;
   grid-template-columns: repeat(auto-fit, minmax(var(--gridList-column), 1fr)); 
   grid-gap: var(--gridList-gap);
-  margin: 0 100px;
 }
 
 @media screen and (max-width: 37.5rem) {

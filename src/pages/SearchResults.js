@@ -1,7 +1,6 @@
 import useGifs from "../hooks/useGifs";
 import Spinner from "../components/Spinner";
 import ListOfGifs from "../components/ListOfGifs";
-import SearchForm from "../components/SearchForm";
 
 
 export default function SearchResults({ params }) {
@@ -13,15 +12,10 @@ export default function SearchResults({ params }) {
       loading
         ? <Spinner />
         : <>
-          
-          <SearchForm  initialKeyword={keyword} initialRating={rating}/>
-            
-          <div className="App-wrapper">
-            <h3>
-              {decodeURI(keyword)}
-            </h3>
-            <ListOfGifs gifs={gifs} />
-          </div> 
+          <h3>
+            {decodeURI(keyword)}
+          </h3>
+          <ListOfGifs gifs={gifs} />
         </>
     }
   </>;

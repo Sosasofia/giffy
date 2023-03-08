@@ -1,0 +1,21 @@
+.Category {
+  position: sticky;
+  left: 0;
+}
+
+.Category-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Category-link {
+  color: black;
+  font-size: 1.2em;
+  transition: color ease-in 0.1s;
+}
+
+.Category-link:hover {
+color: #8c55a2;
+}
+

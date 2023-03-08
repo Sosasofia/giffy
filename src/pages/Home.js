@@ -9,12 +9,21 @@ export default function Home() {
   const { gifs } = useGifs();
 
   return (
-    <div className="App-wrapper">
-      <SearchForm />
-      <div className="App-main">
-        <TrendingSearches />
-        <ListOfGifs gifs={gifs} />
+    <>
+      <header>
+        <SearchForm />
+      </header>
+      <div className="App-wrapper">  
+        <div className="App-main">
+          <div className="App-category">
+            <TrendingSearches />
+          </div>
+          <div className="App-results">
+            <h3>Last search</h3>
+            <ListOfGifs gifs={gifs} />
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
