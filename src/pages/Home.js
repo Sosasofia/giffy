@@ -6,7 +6,8 @@ import SearchForm from "../components/SearchForm";
 
 
 export default function Home() {
-  const { gifs } = useGifs();
+  const { gifs, setPage } = useGifs();
+  const handleNextPage = () => setPage((prevPage) => prevPage + 1);
 
   return (
     <>
@@ -21,6 +22,7 @@ export default function Home() {
           <div className="App-results">
             <h3>Last search</h3>
             <ListOfGifs gifs={gifs} />
+            <button className="nes-btn" onClick={handleNextPage}>Load More</button>
           </div>
         </div>
       </div>
