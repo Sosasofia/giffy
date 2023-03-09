@@ -1,11 +1,28 @@
 import useGifs from "../hooks/useGifs";
 import Spinner from "../components/Spinner";
 import ListOfGifs from "../components/ListOfGifs";
+import { useCallback, useEffect, useRef } from "react";
+import useNearScreen from "../hooks/useNearScreen";
+import debounce from "just-debounce-it";
 
 
 export default function SearchResults({ params }) {
   const { keyword, rating = "g" } = params;
-  const { loading, gifs } = useGifs({ keyword, rating });
+  const { loading, gifs, setPage } = useGifs({ keyword, rating });
+  const externalRef = useRef();
+  const { isNearScreen } = useNearScreen({
+    externalRef: loading ? null : externalRef,
+    once: false
+  });
+
+  // eslint-disable-next-line
+  const debounceHandleNextPage = useCallback(debounce(
+    () => setPage(prevPage => prevPage + 1), 200
+  ), [setPage]);
+
+  useEffect(() => {
+    if(isNearScreen) debounceHandleNextPage();
+  }, [debounceHandleNextPage, isNearScreen]);
 
   return <>
     {
@@ -16,6 +33,7 @@ export default function SearchResults({ params }) {
             {decodeURI(keyword)}
           </h3>
           <ListOfGifs gifs={gifs} />
+          <div id="visor" ref={externalRef}></div>
         </>
     }
   </>;
