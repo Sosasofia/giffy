@@ -1,5 +1,5 @@
 import { useLocation } from "wouter";
-import useForm from "../../hooks/useForm";
+import useForm from "hooks/useForm";
 
 const RATINGS = ["g", "pg", "pg-13", "r"];
 

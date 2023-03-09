@@ -1,8 +1,8 @@
 import React from "react";
-import useGifs from "../hooks/useGifs";
-import ListOfGifs from "../components/ListOfGifs";
-import TrendingSearches from "../components/TrendingSearches";
-import SearchForm from "../components/SearchForm";
+import useGifs from "hooks/useGifs";
+import ListOfGifs from "components/ListOfGifs";
+import TrendingSearches from "components/TrendingSearches";
+import SearchForm from "components/SearchForm";
 
 
 export default function Home() {

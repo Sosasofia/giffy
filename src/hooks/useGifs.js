@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
-import getGifs from "../services/getGifs";
-import GifsContext from "../context/GifsContexts";
+import getGifs from "services/getGifs";
+import GifsContext from "context/GifsContexts";
 
 const INITIAL_PAGE = 0;
 

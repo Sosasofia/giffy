@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import "./style.css";
-import getTrendingTrends from "../../services/getTrendings";
+import getTrendingTrends from "services/getTrendings";
 
 
 export default function TrendingSearches() {

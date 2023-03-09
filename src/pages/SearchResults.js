@@ -1,9 +1,9 @@
-import useGifs from "../hooks/useGifs";
-import Spinner from "../components/Spinner";
-import ListOfGifs from "../components/ListOfGifs";
 import { useCallback, useEffect, useRef } from "react";
-import useNearScreen from "../hooks/useNearScreen";
 import debounce from "just-debounce-it";
+import useGifs from "hooks/useGifs";
+import useNearScreen from "hooks/useNearScreen";
+import Spinner from "components/Spinner";
+import ListOfGifs from "components/ListOfGifs";
 
 
 export default function SearchResults({ params }) {
