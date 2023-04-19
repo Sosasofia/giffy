@@ -46,7 +46,7 @@ export default function SearchForm({ initialKeyword = "", initialRating = RATING
         </select>
       </div>
       
-      <button className="nes-btn is-primary">Seacrh</button>
+      <button className="nes-btn is-primary" aria-label="search-button">Search</button>
     </form>
   );
 }
