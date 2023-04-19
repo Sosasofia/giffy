@@ -1,9 +1,10 @@
+import { memo } from "react";
 import { useLocation } from "wouter";
 import useForm from "hooks/useForm";
 
 const RATINGS = ["g", "pg", "pg-13", "r"];
 
-export default function SearchForm({ initialKeyword = "", initialRating = RATINGS[0]}) {
+function SearchForm({ initialKeyword = "", initialRating = RATINGS[0]}) {
   
   const [_, pushLocation] = useLocation();
   const { keyword, rating, changeKeyword, changeRating } = useForm({ initialKeyword, initialRating });
@@ -50,3 +51,5 @@ export default function SearchForm({ initialKeyword = "", initialRating = RATING
     </form>
   );
 }
+
+export default memo(SearchForm);
