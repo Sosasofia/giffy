@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <span>Code by Sofia Sosa</span>
       <section>
-        <a href="https://github.com/Sosasofia/giffy"><i class="nes-icon github is-small"></i></a>
+        <a href="https://github.com/Sosasofia/giffy"><i className="nes-icon github is-small"></i></a>
       </section>
     </footer>
   );
