@@ -5,6 +5,7 @@ import useNearScreen from "hooks/useNearScreen";
 import Spinner from "components/Spinner";
 import ListOfGifs from "components/ListOfGifs";
 import useSEO from "hooks/useSEO";
+import SearchForm from "components/SearchForm";
 
 
 export default function SearchResults({ params }) {
@@ -33,6 +34,9 @@ export default function SearchResults({ params }) {
       loading
         ? <Spinner />
         : <>
+          <header>
+            <SearchForm />
+          </header>
           <h3>
             {decodeURI(keyword)}
           </h3>
