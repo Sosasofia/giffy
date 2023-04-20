@@ -47,7 +47,7 @@ function SearchForm({ initialKeyword = "", initialRating = RATINGS[0]}) {
         </select>
       </div>
       
-      <button className="nes-btn is-primary">Seacrh</button>
+      <button className="nes-btn is-primary">Search</button>
     </form>
   );
 }
