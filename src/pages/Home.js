@@ -1,7 +1,7 @@
 import React from "react";
 import useGifs from "hooks/useGifs";
 import ListOfGifs from "components/ListOfGifs";
-import TrendingSearches from "components/TrendingSearches";
+import LazyTrending from "components/TrendingSearches";
 import SearchForm from "components/SearchForm";
 
 
@@ -17,7 +17,7 @@ export default function Home() {
       <div className="App-wrapper">  
         <div className="App-main">
           <div className="App-category">
-            <TrendingSearches />
+            <LazyTrending />
           </div>
           <div className="App-results">
             <h3>Last search</h3>

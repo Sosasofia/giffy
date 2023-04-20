@@ -1,28 +1,18 @@
-import { useEffect, useState } from "react";
-import { Link } from "wouter";
+import React, { Suspense } from "react";
 import "./style.css";
-import getTrendingTrends from "services/getTrendings";
+import useNearScreen from "hooks/useNearScreen";
+import Spinner from "components/Spinner";
 
+const TrendingSearches = React.lazy(() => import("./TrendingSearches"));
 
-export default function TrendingSearches() {
-  const [trends, setTrends] = useState([]);
+export default function LazyTrending() {
+  const { isNearScreen, fromRef } = useNearScreen({ distance: "0px" });
 
-  useEffect(() => {
-    getTrendingTrends().then(setTrends);
-  }, []);
-
-  return(
-    <div className="Category">
-      <h3 className="Category-title nes-text is-primary">Trending</h3>
-      <ul className="Category-list">
-        {
-          trends.map((trend) => (
-            <li key={trend}>
-              <Link to={`/search/${trend}` } className="Category-link">{trend}</Link>
-            </li>
-          ))
-        }
-      </ul>
+  return (
+    <div ref={fromRef}>
+      <Suspense fallback={<Spinner />}>
+        { isNearScreen ? <TrendingSearches /> :null}
+      </Suspense>
     </div>
   );
 }
