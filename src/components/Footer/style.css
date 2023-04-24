@@ -1,9 +1,7 @@
 footer {
-    /* position: fixed; */
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    display: inline-flex;
-    gap: 10px;
-    justify-content: center;
+  display: inline-flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 1rem;
+  padding: 0.6rem;
 }

@@ -18,7 +18,7 @@ export default function Detail({ params }) {
     <div className="App-detail">
       <h3 className="nes-text is-primary">{gif.title}</h3>
       <Gif {...gif} />
-      <Link className="nes-btn Detail-buttton" to="/">Go back</Link>
+      <Link className="nes-btn btn" to="/">Go back</Link>
     </div>
   );
 }

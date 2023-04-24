@@ -6,76 +6,89 @@
 .App-content {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  height: 100%;
-  padding: 16px;
-  width: 100vw;
-  position: relative;
   text-align: left;
+  margin: 0 3rem;
+  min-height: 100vh;
 }
 
 .App-logo {
-  margin: 10px auto;
-  padding: 20px 0;
-  width: 144px;
-}
-
-.App-wrapper {
-  width: 100%;
-  max-width: 90em;
-  margin: 0 auto;
-	padding: 0 0.5em;
+  margin: 2rem auto;
+  font-size: 3rem;
 }
 
 .App-main {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 25% 75%;
-  padding: 20px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 90rem;
+  margin: 1.3rem auto;
 }
 
 .App-results {
-  flex-shrink: 2;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6rem;
 }
 
 .App-category {
-  margin-bottom: 25px;
-  width: 100%;
-  height: 100%;
   position: sticky;
+  top: 5rem;
+  background-color: whitesmoke;
+  margin-bottom: 1.5rem;
+  margin-right: 2.5rem;
+  width: 40%;
+  height: 100%;
 }
 
 .App-detail {
   text-align: center;
-  max-width: 1000px;
+  display: grid;
+  justify-items: center;
+  max-height: 100vh;
+}
+
+.Search-results {
+  width: 100%;
+  max-width: 80rem;
   margin: 0 auto;
 }
 
-.Search-form {
-  display: flex;
-  margin: 0 auto;
+.btn {
+  align-self: center;
+  max-width: 12.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+header {
+  background-color: whitesmoke;
   position: sticky;
   top: 0;
-  z-index: 5;
-  width: 100%;
-  padding: 0 10%;
-  background-color: whitesmoke;
-}
-
-.Search-select {
-  max-width: 180px;
-  margin-right: 10px;
+  z-index: 4;
 }
 
 @media screen and (max-width: 37.5rem) {
+  .App-content {
+    margin: 0 1rem;
+  }
+
+  .App-logo {
+    font-size: 2rem;
+  }
+
   .App-main {
     display: flex;
     flex-direction: column-reverse;
   }
 
-  .Search-form {
-    padding: 0;
+  .App-category {
+    width: 100%;
+    margin-top: 4rem;
   }
 }

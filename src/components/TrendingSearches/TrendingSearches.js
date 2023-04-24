@@ -12,9 +12,9 @@ export default function TrendingSearches() {
   }, []);
 
   return(
-    <section className="Category">
-      <h3 className="Category-title nes-text is-primary">Trending</h3>
-      <ul className="Category-list">
+    <section className="lists">
+      <h3 className="nes-text is-primary">Trending</h3>
+      <ul className="nes-list is-disc">
         {
           trends.map((trend) => (
             <li key={trend}>

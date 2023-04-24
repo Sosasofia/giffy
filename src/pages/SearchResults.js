@@ -10,10 +10,10 @@ import SearchForm from "components/SearchForm";
 
 export default function SearchResults({ params }) {
   const { keyword, rating = "g" } = params;
-  const { loading, gifs, setPage } = useGifs({ keyword, rating });
+  const { loading, gifs, setPage } = useGifs({ keyword, rating, limit: 8 });
   const externalRef = useRef();
   const { isNearScreen } = useNearScreen({
-    externalRef: loading ? null : externalRef,
+    externalRef: loading ? null : externalRef, distance: "0px",
     once: false
   });
 
@@ -37,10 +37,12 @@ export default function SearchResults({ params }) {
           <header>
             <SearchForm />
           </header>
-          <h3>
-            {decodeURI(keyword)}
-          </h3>
-          <ListOfGifs gifs={gifs} />
+          <section className="Search-results">
+            <h3>
+              {decodeURI(keyword)}
+            </h3>
+            <ListOfGifs gifs={gifs} />
+          </section>
           <div id="visor" ref={externalRef}></div>
         </>
     }

@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { useLocation } from "wouter";
 import useForm from "hooks/useForm";
+import "./style.css";
 
 const RATINGS = ["g", "pg", "pg-13", "r"];
 
@@ -30,21 +31,23 @@ function SearchForm({ initialKeyword = "", initialRating = RATINGS[0]}) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="Search-form">
-      <input
-        placeholder="Search a gif here..."
-        onChange={handleChange}
-        type="text"
-        value={keyword}
-        className="nes-input"
-      />
-      <div className="nes-select Search-select">
-        <select onChange={handleChangeRating} >
-          <option disabled>Rating type</option>
-          {RATINGS.map((rating) => (
-            <option key={rating}>{rating}</option>
-          ))}
-        </select>
+    <form onSubmit={handleSubmit}>
+      <div className="inputs">
+        <input
+          placeholder="Search a gif here..."
+          onChange={handleChange}
+          type="text"
+          value={keyword}
+          className="nes-input"
+        />
+        <div className="nes-select select">
+          <select onChange={handleChangeRating} >
+            <option disabled>Rating type</option>
+            {RATINGS.map((rating) => (
+              <option key={rating}>{rating}</option>
+            ))}
+          </select>
+        </div>
       </div>
       
       <button className="nes-btn is-primary">Search</button>
