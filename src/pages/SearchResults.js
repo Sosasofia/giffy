@@ -4,16 +4,21 @@ import useGifs from "hooks/useGifs";
 import useNearScreen from "hooks/useNearScreen";
 import Spinner from "components/Spinner";
 import ListOfGifs from "components/ListOfGifs";
+import useSEO from "hooks/useSEO";
+import SearchForm from "components/SearchForm";
 
 
 export default function SearchResults({ params }) {
   const { keyword, rating = "g" } = params;
-  const { loading, gifs, setPage } = useGifs({ keyword, rating });
+  const { loading, gifs, setPage } = useGifs({ keyword, rating, limit: 8 });
   const externalRef = useRef();
   const { isNearScreen } = useNearScreen({
-    externalRef: loading ? null : externalRef,
+    externalRef: loading ? null : externalRef, distance: "0px",
     once: false
   });
+
+  const title = gifs ? `Resultados de ${keyword}` : "";
+  useSEO({ title, description: `Gifs about ${keyword}` });
 
   // eslint-disable-next-line
   const debounceHandleNextPage = useCallback(debounce(
@@ -29,10 +34,15 @@ export default function SearchResults({ params }) {
       loading
         ? <Spinner />
         : <>
-          <h3>
-            {decodeURI(keyword)}
-          </h3>
-          <ListOfGifs gifs={gifs} />
+          <header>
+            <SearchForm />
+          </header>
+          <section className="Search-results">
+            <h3>
+              {decodeURI(keyword)}
+            </h3>
+            <ListOfGifs gifs={gifs} />
+          </section>
           <div id="visor" ref={externalRef}></div>
         </>
     }

@@ -1,0 +1,31 @@
+form {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.8rem;
+  margin: 0 auto;
+}
+
+.inputs {
+  display: inline-flex;
+}
+
+.select {
+  max-width: 11rem;
+  margin-right: 0.6rem;
+}
+
+@media screen and (max-width: 37.5rem) {
+    form {
+      flex-direction: column;
+    }
+
+    .select {
+      max-width: 6rem;
+    }
+
+    input,
+    input::placeholder {
+      font-size: 0.6rem;
+    }
+}

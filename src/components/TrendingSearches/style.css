@@ -1,21 +1,28 @@
-.Category {
-  position: sticky;
-  left: 0;
+ul {
+  list-style-type: none;
+  padding-left: 1rem;
 }
 
-.Category-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+ul li {
+  margin-bottom: 0.5rem;
 }
 
 .Category-link {
   color: black;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   transition: color ease-in 0.1s;
 }
 
 .Category-link:hover {
-color: #8c55a2;
+  color: #8c55a2;
 }
 
+@media screen and (max-width: 37.5rem) {
+  ul {
+    padding: 0.6rem;
+  }
+
+  .Category-link {
+    font-size: 1rem;
+  }
+}
