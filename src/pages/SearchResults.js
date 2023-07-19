@@ -10,7 +10,7 @@ import SearchForm from "components/SearchForm";
 
 export default function SearchResults({ params }) {
   const { keyword, rating = "g" } = params;
-  const { loading, gifs, setPage } = useGifs({ keyword, rating, limit: 8 });
+  const { loading, gifs, setPage } = useGifs({ keyword, rating, limit: 12 });
   const externalRef = useRef();
   const { isNearScreen } = useNearScreen({
     externalRef: loading ? null : externalRef, distance: "0px",

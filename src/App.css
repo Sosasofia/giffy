@@ -21,7 +21,7 @@
   width: 100%;
   height: 100%;
   max-width: 90rem;
-  margin: 1.3rem auto;
+  margin: 0 auto;
 }
 
 .App-results {
@@ -30,15 +30,14 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 6rem;
+  margin-top: 1.5rem;
 }
 
 .App-category {
   position: sticky;
   top: 5rem;
-  background-color: whitesmoke;
-  margin-bottom: 1.5rem;
-  margin-right: 2.5rem;
-  width: 40%;
+  margin: 1.5rem 0.6rem;
+  width: 30%;
   height: 100%;
 }
 
@@ -49,11 +48,6 @@
   max-height: 100vh;
 }
 
-.Search-results {
-  width: 100%;
-  max-width: 80rem;
-  margin: 0 auto;
-}
 
 .btn {
   align-self: center;
@@ -73,7 +67,7 @@ header {
   z-index: 4;
 }
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 47.5rem) {
   .App-content {
     margin: 0 1rem;
   }
@@ -89,6 +83,6 @@ header {
 
   .App-category {
     width: 100%;
-    margin-top: 4rem;
+    margin-top: 0;
   }
 }
