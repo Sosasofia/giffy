@@ -1,6 +1,5 @@
 import React from "react";
 import Gif from "../Gif";
-import "./style.css";
 import MasonryLayout from "components/MasonryLayout";
 
 export default function ListOfGifs({ gifs }) {
