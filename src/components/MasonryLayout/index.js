@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function MasonryLayout ({ children, gap = 10 }) {
+export default function MasonryLayout({ children, gap = 10 }) {
   const [columns, setColumns] = useState(1);
 
   const resize = () => {
@@ -19,7 +19,7 @@ export default function MasonryLayout ({ children, gap = 10 }) {
   const getColumns = (innerWidth) => {
     if (innerWidth <= 400) return 1;
     if (innerWidth <= 800) return 2;
-    if (innerWidth <= 1100) return 3;
+    if (innerWidth <= 1100) return 4;
     return 4;
   };
 
@@ -30,12 +30,12 @@ export default function MasonryLayout ({ children, gap = 10 }) {
   for (let i = 0; i < columns; i++) {
     columnWrapper[`column${i}`] = [];
   }
-  
+
   // divide children into columns
   for (let i = 0; i < children.length; i++) {
     const columnIndex = i % columns;
     columnWrapper[`column${columnIndex}`].push(
-      <div key={i} style={{marginBottom: `${gap}px`}}>
+      <div key={i} style={{ marginBottom: `${gap}px` }}>
         {children[i]}
       </div>
     );
@@ -51,8 +51,11 @@ export default function MasonryLayout ({ children, gap = 10 }) {
   }
 
   return (
-    <div className="masonry" style={{ display: "flex", gap: `${gap}px`, flexFlow: "row wrap" }}>
+    <div
+      className="masonry"
+      style={{ display: "flex", gap: `${gap}px`, flexFlow: "row wrap" }}
+    >
       {result}
     </div>
   );
-};
+}
